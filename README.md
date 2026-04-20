@@ -7,10 +7,6 @@ A Python-based local AI agent powered by **LM Studio** with web search, web scra
 1. **Python 3.10+** installed
 2. **LM Studio** installed and running with a model loaded
    - Download from: https://lmstudio.ai
-   - Recommended models:
-     - **Qwen 2.5 Coder 7B/14B** — Best for tool-calling + coding
-     - **Llama 3.1 8B Instruct** — Good all-around
-     - **DeepSeek Coder V2** — Great for web dev
    - Start the local server in LM Studio's **Developer** tab (default port: 1234)
 
 ## Setup

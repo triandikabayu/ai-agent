@@ -73,7 +73,7 @@ def agent_node(state: AgentState) -> dict:
     # It safely guarantees the conversation starts on a human or AI block.
     trimmed_messages = trim_messages(
         messages,
-        max_tokens=30,
+        max_tokens=30, # Keep only 30 convo message (can increase if wanted)
         token_counter=len,
         strategy="last",
         start_on="human", 
