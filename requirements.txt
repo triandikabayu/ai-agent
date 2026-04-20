@@ -1,0 +1,21 @@
+# LLM & Agent Framework
+langchain>=0.3.0
+langgraph>=0.2.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+
+# Web Search
+duckduckgo-search>=6.0.0
+
+# Web Scraping
+playwright>=1.40.0
+selectolax>=0.3.0
+requests>=2.31.0
+
+# Knowledge Base (RAG)
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# Config & CLI
+python-dotenv>=1.0.0
+rich>=13.0.0
