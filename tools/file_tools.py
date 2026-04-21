@@ -4,6 +4,7 @@ Unrestricted access to any path on the system.
 """
 
 import os
+import shutil
 from pathlib import Path
 from langchain_core.tools import tool
 
@@ -125,6 +126,13 @@ def edit_file(file_path: str, target_text: str, replacement_text: str) -> str:
         
         if target_text not in content:
             return "Error: Could not find `target_text` inside the file. Ensure the target text matches exactly, including whitespace and line breaks."
+            
+        # Create a backup before editing
+        try:
+            backup_path = path.with_suffix(".bak")
+            shutil.copy2(path, backup_path)
+        except Exception:
+            return "Error: Gagal melakukan operasi backup sebelum mengedit file."
             
         new_content = content.replace(target_text, replacement_text, 1)
         path.write_text(new_content, encoding="utf-8")
