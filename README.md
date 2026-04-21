@@ -94,7 +94,7 @@ You: I need help setting up Prisma with Next.js
 
 ```
 ai-agent/
-├── main.py              # CLI entry point with slash commands
+├── main.py              # CLI entry point
 ├── requirements.txt     # Dependencies
 ├── .env / .env.example  # Configuration
 │
@@ -103,21 +103,29 @@ ai-agent/
 │   ├── state.py         # Agent state schema
 │   └── prompts.py       # System prompts (general + web_dev)
 │
+├── cli/                 # Modular CLI command handlers
+│   ├── __init__.py
+│   └── commands.py      # Slash command registry & functions
+│
 ├── tools/
 │   ├── web_search.py    # DuckDuckGo search (free)
 │   ├── web_scraper.py   # BeautifulSoup web scraping
 │   ├── knowledge.py     # RAG: ChromaDB + project indexing
-│   ├── file_tools.py    # File read/write/list (unrestricted)
+│   ├── file_tools.py    # File read/write/edit with auto-backup
 │   └── code_runner.py   # Shell command execution
 │
 ├── config/
 │   └── settings.py      # Centralized configuration
 │
+├── tests/               # Unit tests (Pytest)
+│   ├── __init__.py
+│   └── test_file_tools.py
+│
 └── knowledge/
-    └── chroma_db/       # Persistent vector storage (auto-created)
+    └── chroma_db/       # Persistent vector storage
 ```
 
-### 12 Tools Available
+### 17 Tools Available
 
 | Tool | Description |
 |------|-------------|
@@ -130,9 +138,13 @@ ai-agent/
 | `list_knowledge_topics` | List all stored topics |
 | `clear_knowledge` | Clear stored knowledge |
 | `read_file` | Read any file on the system |
-| `write_file` | Create/write files |
+| `write_file` | Create/write files (fail if exists) |
+| `create_file` | Create new file with safety checks |
+| `edit_file` | **Surgical text replacement with auto-backup (.bak)** |
+| `append_to_file` | Append text to end of file |
 | `list_directory` | Browse directories |
 | `run_command` | Execute shell commands |
+| `get_current_datetime`| Get current system date/time |
 
 ## Configuration
 
