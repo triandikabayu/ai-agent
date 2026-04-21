@@ -1,4 +1,4 @@
-# 🤖 Local AI Agent (LM Studio + LangGraph)
+# (LAAG) Local AI Agent (LM Studio + LangGraph)
 
 A Python-based local AI agent powered by **LM Studio** with web search, web scraping, persistent RAG knowledge base, file management, and code execution capabilities. Includes a specialized **Web Development** mode covering React, Next.js, Go, backend, databases, and more.
 
